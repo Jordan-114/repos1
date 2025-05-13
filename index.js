@@ -1,6 +1,6 @@
 // Crear título
 const titulo = document.createElement("h1");
-titulo.textContent = "Hola mundo con JavaScript";
+titulo.textContent = "¡Hola mundo con JavaScript!";
 document.body.appendChild(titulo);
 
 
