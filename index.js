@@ -1,12 +1,9 @@
 // Crear título
 const titulo = document.createElement("h1");
-titulo.textContent = "¡Hola! Esta página fue creada solo con JavaScript";
+titulo.textContent = "Hola mundo con JavaScript";
 document.body.appendChild(titulo);
 
-// Crear párrafo
-const parrafo = document.createElement("p");
-parrafo.textContent = "No hay HTML aquí... solo código JS.";
-document.body.appendChild(parrafo);
+
 
 // Crear botón
 const boton = document.createElement("button");
