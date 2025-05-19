@@ -37,3 +37,5 @@ btnRegresar.style.borderRadius = "5px";
 // Agregar al body
 document.body.appendChild(document.createElement("br"));
 document.body.appendChild(btnRegresar);
+
+// Versión 1.0 - Probando GitHub Actions
