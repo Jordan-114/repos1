@@ -25,26 +25,20 @@ jobs:
           npm init -y
           npm install eslint --save-dev
 
-      - name: Crear configuración ESLint (v9+)
+      - name: Crear configuración ESLint compatible
         run: |
-          echo 'export default [
+          echo "module.exports = [
             {
-              files: ["**/*.js"],
+              files: ['**/*.js'],
               languageOptions: {
                 ecmaVersion: 2021,
-                sourceType: "module"
+                sourceType: 'module'
               },
               rules: {
-                // Puedes agregar reglas personalizadas aquí
+                // Aquí puedes agregar tus reglas personalizadas
               }
             }
-          ];' > eslint.config.js
-
-      - name: Ejecutar ESLint
-        run: npx eslint index.js
-
-
-
+          ];" > eslint.config.js
 
       - name: Ejecutar ESLint
         run: npx eslint index.js
