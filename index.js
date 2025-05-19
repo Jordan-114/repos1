@@ -39,3 +39,5 @@ document.body.appendChild(document.createElement("br"));
 document.body.appendChild(btnRegresar);
 
 // Versión 1.0 - Probando GitHub Actions
+
+// Activando GitHub Actions
