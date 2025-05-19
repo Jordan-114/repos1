@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ master ]
 
-
 jobs:
   lint:
     name: Validar JavaScript
@@ -21,17 +20,31 @@ jobs:
         with:
           node-version: 18
 
-      - name: Instalar ESLint
-        run: npm install eslint --save-dev
-
-      - name: Crear configuración ESLint
+      - name: Inicializar proyecto y ESLint
         run: |
-          echo 'module.exports = {
-            "env": { "browser": true, "es2021": true },
-            "extends": "eslint:recommended",
-            "parserOptions": { "ecmaVersion": 12, "sourceType": "module" },
-            "rules": {}
-          };' > .eslintrc.js
+          npm init -y
+          npm install eslint --save-dev
+
+      - name: Crear configuración ESLint (v9+)
+        run: |
+          echo 'export default [
+            {
+              files: ["**/*.js"],
+              languageOptions: {
+                ecmaVersion: 2021,
+                sourceType: "module"
+              },
+              rules: {
+                // Puedes agregar reglas personalizadas aquí
+              }
+            }
+          ];' > eslint.config.js
+
+      - name: Ejecutar ESLint
+        run: npx eslint index.js
+
+
+
 
       - name: Ejecutar ESLint
         run: npx eslint index.js
